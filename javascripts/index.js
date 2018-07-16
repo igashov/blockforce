@@ -1,4 +1,4 @@
-console.log("INIT");
+console.log("INIT hello");
 
 //Checking if Web3 has been injected by the browser (Mist/MetaMask)
 if (typeof web3 !== 'undefined') {
@@ -35,9 +35,12 @@ window.App = {
   },
 
   showInfo: function() {
+    // Get values from inputs (address and number of blocks to scan)
     console.log("SHOW INFO");
     var address = document.getElementById("address_input").value;
     console.log("ADDRESS: ", address);
+    var blocksToScan = document.getElementById("blocks_input").value ? document.getElementById("blocks_input").value : 2;
+    console.log("BLOCKS TO SCAN: ", blocksToScan);
 
     // Get balance of the given address
     web3.eth.getBalance(address, function(error, balance) {
@@ -67,7 +70,7 @@ window.App = {
     web3.eth.getBlockNumber(function(error, number) {
       if (!error) {
         console.log("NUMBER: ", number);
-        for (var i = number; i > number - 10; i--) {
+        for (var i = number; i > number - blocksToScan; i--) {
           web3.eth.getBlock(i, function(error, block) {
             if (!error) {
               var transactions = block.transactions;
