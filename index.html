@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Etherscan Info</title>
+  	<link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
+    <script src="./javascripts/index.js"></script>
+</head>
+
+<body>
+    <div id="organization_type">
+      <p><input type="text" id="address_input" placeholder="address"></input>
+      <p><button id="address_button" onclick="App.showInfo()">Show Info</button>
+    </div>
+
+    <div id="information">
+      <h3>Balance: <span id="balance"></span> ETH</h3>
+      <h3>Number of Transactions: <span id="number"></span> TX</h3>
+      <h3>Transactions:</h3>
+      <p><span id="tx"></span>
+    </div>
+
+  	<p><span id="status"></span></p>
+
+
+</body>
+</html>
