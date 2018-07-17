@@ -47,7 +47,7 @@ window.App = {
       if (!error) {
         console.log("BALANCE: ", balance.toNumber());
         var balance_element = document.getElementById("balance");
-        balance_element.innerHTML = balance;
+        balance_element.innerHTML = web3.fromWei(balance, 'ether');
       } else {
         console.log("ERROR: web3.eth.getBalance");
       }
