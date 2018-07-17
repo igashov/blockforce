@@ -5,21 +5,21 @@ Input:
 - Type account address
 - If necessary, type number N of last blocks you wish to scan
 
-![Screenshot1](/images/screenshot1.jpg)
+![Screenshot1](./images/screenshot1.jpg)
 
 Output:
 - Balance of this account
 - Total number of transactions sent from this account
 - List of all transactions connected with this account and mined in last N blocks
 
-![Screenshot2](/images/screenshot2.jpg)
+![Screenshot2](./images/screenshot2.jpg)
 
 Made with:
 - nginx with default configuration:
  ```sh
 server {
     location / {
-        root <path_to_folder>/blockforce;
+        root <path_to_folder>/blockforce/etherscanner;
         index index.html;
 
         # kill cache
